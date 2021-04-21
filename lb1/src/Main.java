@@ -32,7 +32,9 @@ public class Main {
                     task4();
                     break;
                 default:
-                    System.out.println("");
+                    System.out.println("Невірно введене число!");
+                    System.out.println("Введіть номер завдання ще раз : ");
+                    System.out.println();
             }
             System.out.println("1. Перше завдання");
             System.out.println("2. Друге завдання");
@@ -47,7 +49,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введіть номер квартири ");
         int p = scanner.nextInt();
-        if (p == 0) throw new IOException("Такої квартири немає!");
+        if (p <= 0) throw new IOException("Такої квартири немає!");
         if (p > 45) throw new IOException("Такої квартири немає!");
         if (p >= 1 && p <= 5) {
             System.out.println("Перший поверх");
@@ -76,7 +78,7 @@ public class Main {
         if (p > 40 && p <= 45) {
             System.out.println("Дев'ятий поверх");
         }
-        double number=p/5;
+        double number = p/5;
         if(p%5!=0){
             number++;
         }
@@ -91,7 +93,7 @@ public class Main {
             double y = Math.pow(x,3);
             System.out.println(String.format("%.2f", x) + "\t"+ String.format("%.3f", y));
         }
-        System.out.println("");
+        System.out.println();
     }
     public static void task3(){
         Scanner scanner = new Scanner(System.in);
@@ -112,7 +114,7 @@ public class Main {
         int num = scanner.nextInt();
         while (true) {
             if (num != 1 && num != 2) {
-                System.out.println("Невірний номер");
+                System.out.println("Невірний номер!");
                 System.out.println("1.Ввести масив з клавіатури.");
                 System.out.println("2.Рандомний масив.");
                 System.out.print("Введіть номер : ");
@@ -142,7 +144,7 @@ public class Main {
                 sum=sum+mas[i];
             }
         }
-        System.out.println("Сума елементів масиву на парних місцях :  "+sum);
+        System.out.println("Сума елементів масиву на парних місцях : "+sum);
         int max=mas[0],maxi=0, suma=0;
         for(int i=0;i<mas.length;i++){
             if(Math.abs(mas[i])>=Math.abs(max)) {
@@ -155,6 +157,7 @@ public class Main {
         }
         System.out.println("Максимальний елемент по модулю : " + Math.abs(max));
         System.out.println("Сума елементів до максимального елементу  : " + suma);
+        System.out.println();
     }
     public static void task4(){
         Scanner scanner = new Scanner(System.in);
@@ -162,7 +165,7 @@ public class Main {
         int n = scanner.nextInt();
         while (true){
             if (n <= 0) {
-                System.out.println("Не вірно введена розмірність!!! Повторіть спробу :");
+                System.out.println("Не вірно введена розмірність!");
                 System.out.print("Введіть розмір матриці : ");
                 n = scanner.nextInt();
             }
@@ -176,7 +179,7 @@ public class Main {
         int num = scanner.nextInt();
         while (true) {
             if (num != 1 && num != 2) {
-                System.out.println("Не вірно введене число!!! Повторіть спробу :");
+                System.out.println("Не вірно введене число!");
                 System.out.println("1.Ввести матрицю з клавіатури.");
                 System.out.println("2.Згенерувати матрицю.");
                 System.out.print("Введіть число : ");
@@ -206,7 +209,7 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println("");
+        System.out.println();
         int sum=0;
         int g=m;
         for (int i = 0; i < n; i++) {
@@ -217,7 +220,8 @@ public class Main {
             }
             g--;
         }
-        System.out.println("Сума бічної діагоналі :  "+sum);
+        System.out.println("Сума бічної діагоналі : "+sum);
+        System.out.println();
     }
     }
 
