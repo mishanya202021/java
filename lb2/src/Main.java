@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1.Завданння 1");
-        System.out.println("2.Завданння 2");
+        System.out.println("1.Завдання 1");
+        System.out.println("2.Завдання 2");
         System.out.println("3.Завдання 3");
         System.out.println("4.Вихід");
         System.out.println("Введіть число : ");
@@ -15,7 +15,7 @@ public class Main {
             switch (num){
                 case 1:
                     try {
-                        System.out.println("\nЗавданння 1 :");
+                        System.out.println("\nЗавдання 1 :");
                         Task.task1();
                         System.out.println();
                     }
@@ -25,7 +25,7 @@ public class Main {
                     break;
                 case 2:
                     try {
-                        System.out.println("\nЗавданння 2 :");
+                        System.out.println("\nЗавдання 2 :");
                         Task.task2("D:\\учоба\\GitHub Repository\\java\\lb2\\sport.txt");
                     }
                     catch (IOException ex){
@@ -33,20 +33,20 @@ public class Main {
                     }
                     break;
                 case 3:
-                    //try {
-                        System.out.println("\nЗавданння 3 :");
-                       // Tasks.task3("D:\учоба\GitHub Repository\java\lb2\\input.txt", "D:\учоба\GitHub Repository\java\lb2\\output.txt");
-                   // }
-                   // catch (IOException ex){
-                    //    System.out.println(ex.getMessage());
-                   // }
+                    try {
+                        System.out.println("\nЗавдання 3 :");
+                        Task.task3("D:\\учоба\\GitHub Repository\\java\\lb2\\input.txt", "D:\\учоба\\GitHub Repository\\java\\lb2\\output.txt");
+                    }
+                    catch (IOException ex){
+                        System.out.println(ex.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Не вірно введене число!Введіть ще раз :");
                     break;
             }
-            System.out.println("1.Завданння 1");
-            System.out.println("2.Завданння 2");
+            System.out.println("1.Завдання 1");
+            System.out.println("2.Завдання 2");
             System.out.println("3.Завдання 3");
             System.out.println("4.Вихід");
             System.out.println("Введіть число : ");

@@ -3,6 +3,8 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Task {
+    /*14.  а)  знищує  всі  слова,  які  починаються  і  закінчуються  за  одну  й  ту  ж  літеру;
+    б)  підраховує кількість різних слів, що входять до заданого тексту.*/
     public static void task1() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введіть рядок : ");
@@ -18,7 +20,7 @@ public class Task {
                 k += word + " ";
             }
         }
-        System.out.println("\nОтриманий рядок після завдання :\n" + k);
+        System.out.println("\nОтриманий рядок після видалення слів :\n" + k);
         int j=0;
         for(String words :p)
         {
@@ -38,7 +40,8 @@ public class Task {
         System.out.println();
     }
 
-
+/*14. Записати у файл sport.txt, що знаходитиметься на диску D прізвища та результати 3 переможців олімпіади  з  інформатики.
+Вивести  вміст  файлу  на  екран  для  візуального  контролю.  Внести  в кінець файлу прізвище та ім'я голови журі.*/
     public static void task2 (String path)throws IOException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введіть прізвища та результати 3 студентів");
@@ -58,11 +61,11 @@ public class Task {
         String third = scanner.nextLine();
 
         String text ="" ;
-        text += "Прізвище 1 студент : "+firstname +"\nБал 1 студента : "+ first+"\nПрізвище 2 студента :"+second_name+"\nБал 2 студента : "+second+"\nПрізвище 3 студента : "+third_name+"\nБал 3 студента : "+third;
+        text += "Прізвище 1 студент : "+firstname +"\n-Бал 1 студента : "+ first+"\n-Прізвище 2 студента :"+second_name+"\n-Бал 2 студента : "+second+"\n-Прізвище 3 студента : "+third_name+"\n-Бал 3 студента : "+third;
         outputFile(path,text);
         String inputtext = inputFile(path);
 
-        String[] words = text.split("\n");
+        String[] words = inputtext.split("-");
 
         if(words.length <= 0) throw new IOException("Файл пустий.");
         System.out.println("Інформація про студентів :");
@@ -70,6 +73,22 @@ public class Task {
             System.out.println(word);
         }
         System.out.println();
+        System.out.println("Введіть голову журі : ");
+        text +="\n-Голова журі : "+ scanner.nextLine();
+        outputFile(path,text);
+    }
+
+    public static void task3(String input,String output)throws IOException{
+        String inputtext = inputFile(input);
+        int kilk=0;
+        String[] words = inputtext.split("");
+        if(words.length <= 0) throw new IOException("Файл пустий.");
+        System.out.println("Текст з файлу :"+inputtext);
+        for(String word : words){
+            kilk++;
+        }
+        System.out.println("Кількість символів в масиві : " + kilk);
+        outputFile(output, Integer.toString(kilk));
     }
 
     //
