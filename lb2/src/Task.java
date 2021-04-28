@@ -47,27 +47,29 @@ public class Task {
         System.out.println("Введіть прізвища та результати 3 студентів");
         System.out.println("Введіть прізвище 1 студента");
         String firstname = scanner.nextLine();
+        if(firstname.length() <= 0) throw new IOException("Не введене імя 1 студента.");
         System.out.println("Введіть результат 1 студента");
         String first = scanner.nextLine();
-
+        if(first.length() <= 0) throw new IOException("Не введений бал 1 студента.");
         System.out.println("Введіть прізвище 2 студента");
-        String second_name = scanner.nextLine();
+        String secondname = scanner.nextLine();
+        if(secondname.length() <= 0) throw new IOException("Не введене імя 2 студента.");
         System.out.println("Введіть результат 2 студента");
         String second = scanner.nextLine();
-
+        if(second.length() <= 0) throw new IOException("Не введений бал 2 студента.");
         System.out.println("Введіть прізвище 3 студента");
-        String third_name = scanner.nextLine();
+        String thirdname = scanner.nextLine();
+        if(thirdname.length() <= 0) throw new IOException("Не введене імя 3 студента.");
         System.out.println("Введіть результат 3 студента");
         String third = scanner.nextLine();
+        if(third.length() <= 0) throw new IOException("Не введений бал 3 студента.");
 
         String text ="" ;
-        text += "Прізвище 1 студент : "+firstname +"\n-Бал 1 студента : "+ first+"\n-Прізвище 2 студента :"+second_name+"\n-Бал 2 студента : "+second+"\n-Прізвище 3 студента : "+third_name+"\n-Бал 3 студента : "+third;
+        text += "Прізвище 1 студент : "+firstname +"\n-Бал 1 студента : "+ first+"\n-Прізвище 2 студента :"+secondname+"\n-Бал 2 студента : "+second+"\n-Прізвище 3 студента : "+thirdname+"\n-Бал 3 студента : "+third;
         outputFile(path,text);
         String inputtext = inputFile(path);
 
         String[] words = inputtext.split("-");
-
-        if(words.length <= 0) throw new IOException("Файл пустий.");
         System.out.println("Інформація про студентів :");
         for(String word : words){
             System.out.println(word);
