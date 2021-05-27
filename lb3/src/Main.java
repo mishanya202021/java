@@ -44,7 +44,7 @@ public class Main {
             k++;
         }
         midl = midl / k;
-        System.out.println("Midl temperature" + midl);
+        System.out.println("Midl temperature : " + midl);
         for (Info info : list) {
             if (info.getTempr() > midl) {
                 System.out.println(info.toString());

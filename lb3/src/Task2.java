@@ -73,7 +73,6 @@ public class Task2 {
 
     public void sort() throws IOException {
         count_note();
-
         ArrayList<Kassa> sortkassa = new ArrayList<Kassa>(kassa);
         sortkassa.sort(Comparator.comparing(Kassa::getHours));
 
@@ -117,12 +116,6 @@ public class Task2 {
 
     }
 
-    /* Цей метод записує у файл за шляхом {@param filepath}
-     * текст {@param text}
-     *
-     * @param filepath шлях до файлу
-     * @throws IOException якщо файлу по шляху {@code filepath} не існує
-     * */
     public void write_to_file(String filepath) throws IOException{
         isFile(filepath);
 

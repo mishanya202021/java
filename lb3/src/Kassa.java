@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Kassa {
@@ -38,8 +36,10 @@ double price;
 
     public void print() {
         System.out.println("Назва : " + name);
-        System.out.println("Дата і час : " + vidprav.toString());
-        System.out.println("Дата і час прибутя : " + pribyt.toString());
+        System.out.println("Дата і час відправлення ");
+        System.out.println("Дата : " + vidprav.toString());
+        System.out.println("Дата і час прибуття ");
+        System.out.println("Дата : " + pribyt.toString());
         System.out.println("Ціна : " + price);
     }
 

@@ -42,7 +42,7 @@ public class DateTime {
         month = Integer.parseInt(line);
         System.out.print("Введіть рік : ");
         line = scanner.nextLine();
-        if (line.isEmpty() || Integer.parseInt(line) > (nowdate.getYear() + 1000)) {
+        if (line.isEmpty() || Integer.parseInt(line) > (nowdate.getYear() + 1900)) {
             System.err.println("Не вірно введений рік!");
             this.enterDateTime();
             return;
@@ -109,11 +109,19 @@ public class DateTime {
         System.out.println("Дата : "+day);
         System.out.println("Місяць : "+month);
         System.out.println("Рік : "+year);
-        System.out.println("Час" + hour +":"+minute);
-    }
+        if(hour<10) {
+            System.out.print("Час" + "0" + hour + ":");
+        }
+        else
+            System.out.print("Час" + hour + ":");
+        if(minute<10) {
+            System.out.println("0" + minute);
+        }
+        else
+            System.out.println( minute);    }
     @Override
     public String toString() {
-        return day + "." + month + "." + year + "  " + hour + ":" + minute;
+        return day + "." + month + "." + year + "\nЧас :  " + hour + ":" + minute;
     }
     public String to_String() {
         return day + "\n" + month + "\n" + year + "\n" + hour + "\n" + minute;
