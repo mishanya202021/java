@@ -22,13 +22,6 @@ public class Info {
     }
 
     //--------------
-    public void add() {
-        ArrayList<Info> zapis = new ArrayList<Info>();
-        Info new_info = new Info();
-        System.out.println("\nВведіть інформацію :");
-        new_info.input();
-        zapis.add(new_info);
-    }
 
     public void input() {
         Scanner scanner = new Scanner(System.in);

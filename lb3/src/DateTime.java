@@ -1,27 +1,34 @@
 import java.util.Date;
 import java.util.Scanner;
-public class Dat {
-int day;
-int month;
-int year;
-    public Dat() {
+
+public class DateTime {
+    int day;
+    int month;
+    int year;
+    int hour;
+    int minute;
+    public DateTime() {
         day = 0;
         month = 0;
         year = 0;
+        hour = 0;
+        minute = 0;
     }
-    public Dat(int day , int month , int year){
+    public DateTime(int hour, int minute, int day, int month, int year){
         this.day = day;
         this.month = month;
         this.year = year;
+        this.hour = hour;
+        this.minute = minute;
     }
-    public void enterDat(){
+    public void enterDateTime(){
         Date nowdate = new Date();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введіть день : ");
         String line = scanner.nextLine();
         if(Integer.parseInt(line)<0||Integer.parseInt(line)>31||line.isEmpty()){
             System.err.println("Не вірно введений день");
-            this.enterDat();
+            this.enterDateTime();
             return;
         }
         day = Integer.parseInt(line);
@@ -29,7 +36,7 @@ int year;
         line = scanner.nextLine();
         if(Integer.parseInt(line)<0||Integer.parseInt(line)>12||line.isEmpty()){
             System.err.println("Не вірно введений місяць");
-            this.enterDat();
+            this.enterDateTime();
             return;
         }
         month = Integer.parseInt(line);
@@ -37,16 +44,31 @@ int year;
         line = scanner.nextLine();
         if (line.isEmpty() || Integer.parseInt(line) > (nowdate.getYear() + 1000)) {
             System.err.println("Не вірно введений рік!");
-            this.enterDat();
+            this.enterDateTime();
             return;
         }
         year = Integer.parseInt(line);
-
+        System.out.print("Введіть годину : ");
+        line = scanner.nextLine();
+        if (line.isEmpty() || Integer.parseInt(line) > 24) {
+            System.err.println("Не вірно введена година!");
+            this.enterDateTime();
+            return;
+        }
+        hour = Integer.parseInt(line);
+        System.out.print("Введіть хвилини : ");
+        line = scanner.nextLine();
+        if (line.isEmpty() || Integer.parseInt(line) > 60) {
+            System.err.println("Не вірно введена хвилина!");
+            this.enterDateTime();
+            return;
+        }
+        minute = Integer.parseInt(line);
         if ((year == (nowdate.getYear() + 1000))
                 && ((month > nowdate.getMonth() + 1)
                 || ((month == nowdate.getMonth() + 1) && (day > nowdate.getDate())))) {
             System.err.println("Не вірно введений рік!");
-            this.enterDat();
+            this.enterDateTime();
             return;
         }
 
@@ -54,42 +76,47 @@ int year;
             case 2:
                 if (day > 28) {
                     System.err.println("В Лютому тільки 28 днів!");
-                    this.enterDat();
+                    this.enterDateTime();
                     return;
                 }
             case 4:
                 if (day > 30) {
                     System.err.println("В Квітні тільки 30 днів!");
-                    this.enterDat();
+                    this.enterDateTime();
                     return;
                 }
             case 6:
                 if (day > 30) {
                     System.err.println("В Червні тільки 30 днів!");
-                    this.enterDat();
+                    this.enterDateTime();
                     return;
                 }
             case 9:
                 if (day > 30) {
                     System.err.println("В Вересні тільки 30 днів!");
-                    this.enterDat();
+                    this.enterDateTime();
                     return;
                 }
             case 11:
                 if (day > 30) {
                     System.err.println("В Листопаді тільки 30 днів!");
-                    this.enterDat();
+                    this.enterDateTime();
                 }
         }
+
     }
-    public void printDat(){
+    public void printDateTime(){
         System.out.println("Дата : "+day);
         System.out.println("Місяць : "+month);
         System.out.println("Рік : "+year);
+        System.out.println("Час" + hour +":"+minute);
     }
     @Override
     public String toString() {
-        return day + "." + month + "." + year;
+        return day + "." + month + "." + year + "  " + hour + ":" + minute;
+    }
+    public String to_String() {
+        return day + "\n" + month + "\n" + year + "\n" + hour + "\n" + minute;
     }
     public int getDay() {
         return day;
@@ -114,4 +141,12 @@ int year;
     public void setYears(int years) {
         this.year = years;
     }
+
+    public int getHour() {return  hour;}
+
+    public void setHour(int hour){this.hour = hour;}
+
+    public int getMinute(){return minute;}
+
+    public void setMinute(int minute) { this.minute = minute; }
 }
