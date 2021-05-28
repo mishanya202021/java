@@ -56,7 +56,7 @@ public class Course {
         return Ncourse;
     }
 
-    public String getKcathedra() {
+    public String getNcathedra() {
         return Ncathedra;
     }
     

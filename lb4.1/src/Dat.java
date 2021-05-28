@@ -89,7 +89,13 @@ public class Dat {
                 }
         }
     }
-
+    public boolean better(Dat date) {
+        if (this.year > date.year ||
+                (this.year == date.year && this.month > date.month) ||
+                (this.year == date.year && this.month == date.month && this.day > date.day))
+            return true;
+        return false;
+    }
     @Override
     public String toString() {
         return day + "." + month + "." + year;

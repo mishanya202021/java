@@ -54,7 +54,7 @@ public class Lesson extends Course {
         kilkist = scanner.nextInt();
     }
 
-    //метод для виводу даних
+
     @Override
     public void output() {
         System.out.println("Назву курсу  : " + Ncourse);
