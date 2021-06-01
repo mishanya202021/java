@@ -87,17 +87,17 @@ public class Task {
 
     public void sort() throws IOException {
         count_note();
-        ArrayList<Lesson> sortmovies = new ArrayList<Lesson>(lesson);
+        ArrayList<Lesson> sortlesson = new ArrayList<Lesson>(lesson);
         Scanner scanner = new Scanner(System.in);
         for(;;) {
             System.out.print("\nВведіть параметр по якому відбудеться сортування : ");
             String commnd = scanner.nextLine();
             switch (commnd) {
                 case "course":
-                    sortmovies.sort(Comparator.comparing(Lesson::getNcourse));
+                    sortlesson.sort(Comparator.comparing(Lesson::getNcourse));
                     break;
                 case "cathedra":
-                    sortmovies.sort(Comparator.comparing(Lesson::getNcathedra));
+                    sortlesson.sort(Comparator.comparing(Lesson::getNcathedra));
                     break;
                 case "date":
                     Lesson[] arr = sort_date();
@@ -113,10 +113,10 @@ public class Task {
                     System.out.println("\n--------------------------------------");
                     return;
                 case "group":
-                    sortmovies.sort(Comparator.comparing(Lesson::getGroup));
+                    sortlesson.sort(Comparator.comparing(Lesson::getGroup));
                     break;
                 case "kilkist":
-                    sortmovies.sort(Comparator.comparing(Lesson::getKilkist));
+                    sortlesson.sort(Comparator.comparing(Lesson::getKilkist));
                     break;
                 case "help":
                     System.out.println("\nemail - по E-mail " + "\n" +
@@ -134,8 +134,7 @@ public class Task {
 
         int i = 0;
         System.out.println("\n--------Відсортований список :--------");
-        for (var p :
-                sortmovies) {
+        for (var p : sortlesson) {
             System.out.println("\nСпам №" + (i + 1) + " :");
             p.output();
             i++;
