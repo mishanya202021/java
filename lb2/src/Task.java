@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Task {
-    /*14.  а)  знищує  всі  слова,  які  починаються  і  закінчуються  за  одну  й  ту  ж  літеру;
+    /*16.  а)  знищує  всі  слова,  які  починаються  і  закінчуються  за  одну  й  ту  ж  літеру;
     б)  підраховує кількість різних слів, що входять до заданого тексту.*/
     public static void task1() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class Task {
         System.out.println();
     }
 
-/*14. Записати у файл sport.txt, що знаходитиметься на диску D прізвища та результати 3 переможців олімпіади  з  інформатики.
+/*16. Записати у файл sport.txt, що знаходитиметься на диску D прізвища та результати 3 переможців олімпіади  з  інформатики.
 Вивести  вміст  файлу  на  екран  для  візуального  контролю.  Внести  в кінець файлу прізвище та ім'я голови журі.*/
     public static void task2 (String path)throws IOException{
         Scanner scanner = new Scanner(System.in);
